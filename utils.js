@@ -1,4 +1,4 @@
-function merge(arr1, arr2) {
+exports.merge = (arr1, arr2) => {
 	let arr = [];
 	for (let i = 0, j = 0; i < arr1.length || j < arr2.length; ) {
 		const val1 = arr1[i];
@@ -19,7 +19,7 @@ function merge(arr1, arr2) {
 	}
 
 	return arr;
-}
+};
 
 //Time complexity: O(n * log(n))
 //Space complexity: O(n)
@@ -33,4 +33,8 @@ function mergeSortAux(arr) {
 
 exports.mergeSort = (arr) => {
 	return mergeSortAux(arr);
+};
+
+exports.empty = (arr) => {
+	return arr.length === 0;
 };
