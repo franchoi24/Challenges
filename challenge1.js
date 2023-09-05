@@ -1,3 +1,6 @@
+// Time Complexity: O(n * log(n) + m * log(m))
+// Space Complexity: O(n + m)
+
 function smallestDifference(a, b) {
 	//In case we are not allowed to sort original array
 	var cpA = [...a];
@@ -8,16 +11,16 @@ function smallestDifference(a, b) {
 
 	var minDiff = Infinity;
 
-	//As arrays are sorted, there is no need to go on if difference increases
+	//As arrays are sorted, just moving the minimum of both is the only way to decrease the difference
 
-	for (let i = 0; i < cpA.length; i++) {
-		let prevDiff = Infinity;
-		let diffDecreased = true;
-		for (let j = 0; j < cpB.length && diffDecreased; j++) {
-			currentDiff = Math.abs(cpA[i] - cpB[j]);
-			minDiff = currentDiff < minDiff ? currentDiff : minDiff;
-			diffDecreased = currentDiff < prevDiff ? true : false;
-		}
+	var notZero = true;
+
+	for (let i = 0, j = 0; i < a.length && j < b.length && notZero; ) {
+		currentDiff = Math.abs(cpA[i] - cpB[j]);
+		minDiff = currentDiff < minDiff ? currentDiff : minDiff;
+		notZero = minDiff === 0 ? false : true;
+		if (cpA[i] < cpB[j]) i++;
+		else j++;
 	}
 
 	return minDiff;
@@ -46,8 +49,8 @@ function merge(arr1, arr2) {
 	return arr;
 }
 
-//Time complexity O(n * log(n))
-//Space vomplexity O(n)
+//Time complexity: O(n * log(n))
+//Space complexity: O(n)
 function mergeSort(arr) {
 	if (arr.length <= 1) return arr;
 	let mid = Math.floor(arr.length / 2);
@@ -61,9 +64,7 @@ const b = [23, 127, 235, 19, 8];
 
 console.log(smallestDifference(a, b));
 
-
 const c = [10, 5, 40];
 const d = [50, 90, 80];
 
-
-console.log(smallestDifference(c, d)); // output: 10
+console.log(smallestDifference(c, d));
