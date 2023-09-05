@@ -1,3 +1,5 @@
+const Utils = require("./utils");
+
 // Time Complexity: O(n * log(n) + m * log(m))
 // Space Complexity: O(n + m)
 
@@ -6,8 +8,8 @@ function smallestDifference(a, b) {
 	var cpA = [...a];
 	var cpB = [...b];
 
-	cpA = mergeSort(cpA);
-	cpB = mergeSort(cpB);
+	cpA = Utils.mergeSort(cpA);
+	cpB = Utils.mergeSort(cpB);
 
 	var minDiff = Infinity;
 
@@ -24,39 +26,6 @@ function smallestDifference(a, b) {
 	}
 
 	return minDiff;
-}
-
-function merge(arr1, arr2) {
-	let arr = [];
-	for (let i = 0, j = 0; i < arr1.length || j < arr2.length; ) {
-		const val1 = arr1[i];
-		const val2 = arr2[j];
-		if (i === arr1.length) {
-			arr.push(val2);
-			j++;
-		} else if (j === arr2.length) {
-			arr.push(val1);
-			i++;
-		} else if (arr1[i] > arr2[j]) {
-			arr.push(val2);
-			j++;
-		} else {
-			arr.push(val1);
-			i++;
-		}
-	}
-
-	return arr;
-}
-
-//Time complexity: O(n * log(n))
-//Space complexity: O(n)
-function mergeSort(arr) {
-	if (arr.length <= 1) return arr;
-	let mid = Math.floor(arr.length / 2);
-	let left = mergeSort(arr.slice(0, mid));
-	let right = mergeSort(arr.slice(mid));
-	return merge(left, right);
 }
 
 const a = [1, 3, 15, 11, 2];
