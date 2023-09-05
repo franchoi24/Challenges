@@ -4,12 +4,14 @@
   "description": "",
   "main": "challenge1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-		"nodemon": "^3.0.1"
-	}
+    "chai": "^4.3.8",
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.1"
+  }
 }
