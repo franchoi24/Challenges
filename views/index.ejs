@@ -26,8 +26,10 @@
 										id="a"
 										name="a"
 										value="<%= a %>"
+										oninput="formatInput(this)"
 										required
 									/>
+									<div id="error-message__a" class="error-message"></div>
 									<label for="a" class="form__label">Array a</label>
 								</div>
 								<div class="form__group">
@@ -38,8 +40,10 @@
 										id="b"
 										name="b"
 										value="<%= b %>"
+										oninput="formatInput(this)"
 										required
 									/>
+									<div id="error-message__b" class="error-message"></div>
 									<label for="b" class="form__label">Array b</label>
 								</div>
 								<div class="form__group">
@@ -78,8 +82,10 @@
 										id="coins"
 										name="coins"
 										value="<%= coins %>"
+										oninput="formatInput(this)"
 										required
 									/>
+									<div id="error-message__coins" class="error-message"></div>
 									<label for="coins" class="form__label">Coins</label>
 								</div>
 								<div class="form__group">
@@ -109,6 +115,34 @@
 		if ("<%= scrolling %>" === "challenge-2") {
 			// Use the scrollIntoView method to scroll to the element
 			sectionChallenge2.scrollIntoView();
+		}
+	</script>
+
+	<script>
+		function formatInput(input) {
+			const regex = new RegExp("[^0-9,\n]");
+
+			if (regex.test(input.value)) {
+				showError(input.id);
+			} else {
+				hideError(input.id);
+			}
+			input.value = input.value.replace(/[^0-9,\n]/g, "");
+		}
+
+		function showError(id) {
+			const errorMessage = document.getElementById(
+				"error-message__".concat(id)
+			);
+			errorMessage.textContent =
+				"Invalid input. Please enter comma-separated numbers.";
+		}
+
+		function hideError(id) {
+			const errorMessage = document.getElementById(
+				"error-message__".concat(id)
+			);
+			errorMessage.textContent = "";
 		}
 	</script>
 </html>
