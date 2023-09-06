@@ -22,21 +22,6 @@ function nonConstructibleChange(coins) {
 	return maxPossibleChange + 1;
 }
 
-if (process.env.NODE_ENV === "test") {
-	exports.nonConstructibleChange = nonConstructibleChange;
-}
-
-coins = [5, 7, 1, 1, 2, 3, 22];
-
-console.log("=====================================");
-console.log("Coins: ", coins);
-console.log("Non constructible change: ", nonConstructibleChange(coins));
-console.log("=====================================");
-
-coins = [1, 15, 1, 1, 2, 3, 4];
+exports.nonConstructibleChange = nonConstructibleChange;
 
 
-console.log("=====================================");
-console.log("Coins: ", coins);
-console.log("Non constructible change: ", nonConstructibleChange(coins));
-console.log("=====================================");

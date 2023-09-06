@@ -28,22 +28,6 @@ function smallestDifference(a, b) {
 	return minDiff;
 }
 
-if (process.env.NODE_ENV === "test") {
-	exports.smallestDifference = smallestDifference;
-}
+exports.smallestDifference = smallestDifference;
 
-const a = [1, 3, 15, 11, 2];
-const b = [23, 127, 235, 19, 8];
-console.log("=====================================");
-console.log("Arrays:");
-console.log("a: ", a);
-console.log("b: ", b);
-console.log("Smallest diference: ", smallestDifference(a, b));
-console.log("=====================================");
-const c = [10, 5, 40];
-const d = [50, 90, 80];
-console.log("Arrays:");
-console.log("a: ", c);
-console.log("b: ", d);
-console.log("Smallest diference: ", smallestDifference(c, d));
-console.log("=====================================");
+
