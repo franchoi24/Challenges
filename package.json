@@ -1,18 +1,26 @@
 {
 	"name": "challenge",
 	"version": "1.0.0",
-	"description": "",
-	"main": "challenge1.js",
+	"description": "Challenge for 42i",
+	"main": "app.js",
 	"scripts": {
 		"test": "export NODE_ENV=test && mocha --reporter spec",
 		"test-windows": "set NODE_ENV=test&& mocha --reporter spec",
-		"start": "nodemon app.js"
+		"start": "nodemon app.js",
+		"compile:sass": "node-sass public/sass/main.scss public/css/style.css -w"
 	},
-	"author": "",
+	"author": "frchoi",
 	"license": "ISC",
 	"devDependencies": {
 		"chai": "^4.3.8",
 		"mocha": "^10.2.0",
 		"nodemon": "^3.0.1"
+	},
+	"dependencies": {
+		"body-parser": "^1.20.2",
+		"ejs": "^3.1.9",
+		"express": "^4.18.2",
+		"express-handlebars": "3.0",
+		"pug": "^3.0.2"
 	}
 }
