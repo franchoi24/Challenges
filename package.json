@@ -1,17 +1,18 @@
 {
-  "name": "challenge",
-  "version": "1.0.0",
-  "description": "",
-  "main": "challenge1.js",
-  "scripts": {
-    "test": "mocha",
-    "start": "nodemon app.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "chai": "^4.3.8",
-    "mocha": "^10.2.0",
-    "nodemon": "^3.0.1"
-  }
+	"name": "challenge",
+	"version": "1.0.0",
+	"description": "",
+	"main": "challenge1.js",
+	"scripts": {
+		"test": "export NODE_ENV=test && mocha --reporter spec",
+		"test-windows": "set NODE_ENV=test&& mocha --reporter spec",
+		"start": "nodemon app.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"chai": "^4.3.8",
+		"mocha": "^10.2.0",
+		"nodemon": "^3.0.1"
+	}
 }

@@ -1,4 +1,4 @@
-exports.merge = (arr1, arr2) => {
+function merge (arr1, arr2) {
 	let arr = [];
 	for (let i = 0, j = 0; i < arr1.length || j < arr2.length; ) {
 		const val1 = arr1[i];
@@ -38,3 +38,8 @@ exports.mergeSort = (arr) => {
 exports.empty = (arr) => {
 	return arr.length === 0;
 };
+
+
+if (process.env.NODE_ENV === "test") {
+    exports.merge = merge;
+}

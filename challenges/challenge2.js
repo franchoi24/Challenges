@@ -1,4 +1,4 @@
-const Utils = require("./utils");
+const Utils = require("../util/utils");
 
 function nonConstructibleChange(coins) {
 	if (Utils.empty(coins)) return 1;
@@ -22,6 +22,21 @@ function nonConstructibleChange(coins) {
 	return maxPossibleChange + 1;
 }
 
+if (process.env.NODE_ENV === "test") {
+	exports.nonConstructibleChange = nonConstructibleChange;
+}
+
 coins = [5, 7, 1, 1, 2, 3, 22];
 
-console.log(nonConstructibleChange(coins));
+console.log("=====================================");
+console.log("Coins: ", coins);
+console.log("Non constructible change: ", nonConstructibleChange(coins));
+console.log("=====================================");
+
+coins = [1, 15, 1, 1, 2, 3, 4];
+
+
+console.log("=====================================");
+console.log("Coins: ", coins);
+console.log("Non constructible change: ", nonConstructibleChange(coins));
+console.log("=====================================");
