@@ -1,4 +1,3 @@
-````markdown
 ## Installation
 
 To install the required node_modules, run:
@@ -6,7 +5,6 @@ To install the required node_modules, run:
 ```bash
 npm install
 ```
-````
 
 ## Challenge Execution
 
