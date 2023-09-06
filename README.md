@@ -1,24 +1,76 @@
-First install node_modules
+````markdown
+## Installation
 
-$npm install
+To install the required node_modules, run:
 
+```bash
+npm install
+```
+````
 
-To execute challenge 1 execute:
+## Challenge Execution
 
-$node challenges/challenge1ex.js (linux & mac)
+To execute Challenge 1, use the following command:
 
-$node challenges\challenge1ex.js (windows)
+Linux & Mac:
 
-To execute challenge 2 execute:
+```bash
+node challenges/challenge1ex.js
+```
 
-$node challenges/challenge2ex.js (linux & mac)
+Windows:
 
-$node challenges\challenge2ex.js (windows)
+```bash
+node challenges\challenge1ex.js
+```
 
-To execute testing on Linux and Mac run:
+To execute Challenge 2, use the following command:
 
-$npm test
+Linux & Mac:
 
-To execute testing on windows run:
+```bash
+node challenges/challenge2ex.js
+```
 
-$npm run test-window
+Windows:
+
+```bash
+node challenges\challenge2ex.js
+```
+
+## Testing
+
+To run tests on Linux and Mac, use:
+
+```bash
+npm test
+```
+
+To run tests on Windows, use:
+
+```bash
+npm run test-window
+```
+
+## Docker
+
+To build a Docker image, execute the following command at the root of the project:
+
+```bash
+docker build . -t <your-username>/node-web-app
+```
+
+To run the Docker container, use:
+
+```bash
+docker run -p 49160:3000 -d <your-username>/node-web-app
+```
+
+The Docker container will be running on port 49160, and you can access the webpage at:
+
+[http://localhost:49160/](http://localhost:49160/)
+
+```
+
+Please replace `<your-username>` with your Docker username when building the image.
+```
