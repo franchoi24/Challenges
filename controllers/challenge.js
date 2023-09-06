@@ -31,6 +31,7 @@ exports.getChallenge1 = (req, res, next) => {
   bString = req.query.b;
   coinsString = '';
   scrolling = 'challenge-1';
+  answerChallenge2 = '';
   answerChallenge1 = challenge1.smallestDifference(a, b).toString();
 
   res.redirect('/');
@@ -42,6 +43,7 @@ exports.getChallenge2 = (req, res, next) => {
   coinsString = req.query.coins;
   aString = '';
   bString = '';
+  answerChallenge1 = '';
   scrolling = 'challenge-2';
 
   res.redirect('/');
