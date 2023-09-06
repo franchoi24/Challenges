@@ -36,6 +36,20 @@ Windows:
 node challenges\challenge2ex.js
 ```
 
+## RUNNING WEB PAGE LOCALY (DEV)
+
+To add styling in sass use:
+
+```bash
+npm run compile:sass
+```
+
+To run the web page localy without docker run:
+
+```bash
+npm start
+```
+
 ## Testing
 
 To run tests on Linux and Mac, use:
