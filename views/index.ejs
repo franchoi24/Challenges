@@ -50,10 +50,8 @@
 						<div class="challenge__ans u-center-text">
 							<h2 class="heading-secondary">Answer</h2>
 							<div class="challenge__ans--text u-center-text">
-								<% if (answerChallenge1.length !== 0) { %>
-								<h2 class="heading-secondary">
-									<%= answerChallenge1[answerChallenge1.length - 1] %>
-								</h2>
+								<% if (answerChallenge1.length !== "") { %>
+								<h2 class="heading-secondary"><%= answerChallenge1 %></h2>
 								<% } else { %>
 								<h2 class="heading-secondary">-</h2>
 								<% } %>
@@ -92,10 +90,8 @@
 						<div class="challenge__ans u-center-text">
 							<h2 class="heading-secondary">Answer</h2>
 							<div class="challenge__ans--text u-center-text">
-								<% if (answerChallenge2.length !== 0) { %>
-								<h2 class="heading-secondary">
-									<%= answerChallenge2[answerChallenge2.length - 1] %>
-								</h2>
+								<% if (answerChallenge2.length !== "") { %>
+								<h2 class="heading-secondary"><%= answerChallenge2 %></h2>
 								<% } else { %>
 								<h2 class="heading-secondary">-</h2>
 								<% } %>
