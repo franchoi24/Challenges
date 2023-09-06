@@ -68,7 +68,7 @@ The Docker container will be running on port 49160, and you can access the webpa
 
 [http://localhost:49160/](http://localhost:49160/)
 
-```
 
-Please replace `<your-username>` with your Docker username when building the image.
-```
+
+**Please replace `<your-username>` with your Docker username when building the image.**
+
