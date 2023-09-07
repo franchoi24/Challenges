@@ -55,6 +55,13 @@ exports.empty = (arr) => {
   return arr.length === 0;
 };
 
+exports.toArray = (str) => {
+  return str
+      .split(',')
+      .map((str) => parseInt(str))
+      .filter((num) => num);
+};
+
 if (process.env.NODE_ENV === 'test') {
   exports.merge = merge;
 }

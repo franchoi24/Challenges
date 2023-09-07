@@ -1,5 +1,6 @@
 const challenge1 = require('../challenges/challenge1.js');
 const challenge2 = require('../challenges/challenge2.js');
+const Utils = require('../utils/utils.js');
 
 let answerChallenge1 = '';
 
@@ -25,9 +26,9 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getChallenge1 = (req, res, next) => {
-  a = req.query.a.split(',').map((str) => parseInt(str));
+  a = Utils.toArray(req.query.a);
   aString = req.query.a;
-  b = req.query.b.split(',').map((str) => parseInt(str));
+  b = Utils.toArray(req.query.b);
   bString = req.query.b;
   coinsString = '';
   scrolling = 'challenge-1';
@@ -38,7 +39,7 @@ exports.getChallenge1 = (req, res, next) => {
 };
 
 exports.getChallenge2 = (req, res, next) => {
-  coins = req.query.coins.split(',').map((str) => parseInt(str));
+  coins = Utils.toArray(req.query.coins);
   answerChallenge2 = challenge2.nonConstructibleChange(coins).toString();
   coinsString = req.query.coins;
   aString = '';

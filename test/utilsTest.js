@@ -27,4 +27,13 @@ describe('Utils', () => {
     const nonEmptyArr = [1, 2, 3];
     expect(Utils.empty(nonEmptyArr)).to.be.false;
   });
+
+  it('Testing toArray function', () => {
+    const str = '1,2,3,4,5';
+    const arr = Utils.toArray(str);
+    expect(arr).eql([1, 2, 3, 4, 5]);
+    const str2 = ',,2,4,6,4,';
+    const arr2 = Utils.toArray(str2);
+    expect(arr2).eql([2, 4, 6, 4]);
+  });
 });
