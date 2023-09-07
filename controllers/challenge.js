@@ -1,6 +1,6 @@
 const challenge1 = require('../challenges/challenge1.js');
 const challenge2 = require('../challenges/challenge2.js');
-const Utils = require('../utils/utils.js');
+const Utils = require('../util/utils.js');
 
 let answerChallenge1 = '';
 
